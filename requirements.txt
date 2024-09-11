@@ -1,2 +1,6 @@
 pandas
 openpyxl
+matplotlib
+wordcloud
+numpy
+pillow
