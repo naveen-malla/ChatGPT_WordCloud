@@ -4,3 +4,6 @@ matplotlib
 wordcloud
 numpy
 pillow
+nltk
+fsspec
+huggingface_hub
