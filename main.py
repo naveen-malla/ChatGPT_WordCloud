@@ -1,15 +1,7 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS
-
-# Define a function to plot word cloud
-def plot_cloud(wordcloud):
-    plt.figure(figsize=(20, 15))
-    plt.imshow(wordcloud)
-    plt.axis("off")
-    plt.show()
-
-
+from plot_wordcloud import plot_cloud
+from plot_ngrams import analyze_ngrams
 
 
 if __name__ == '__main__':
@@ -24,3 +16,6 @@ if __name__ == '__main__':
     # Plot
     plot_cloud(wordcloud)
 
+    for i in range(2, 5):
+        print("Plotting ", i , "-grams:")
+        analyze_ngrams(text_topic, i, top_n=20)
