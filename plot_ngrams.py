@@ -5,6 +5,7 @@ from nltk.stem import WordNetLemmatizer
 from collections import Counter
 import re
 import matplotlib.pyplot as plt
+import streamlit as st
 
 # Download necessary NLTK data
 # nltk.download('punkt')
@@ -54,13 +55,13 @@ def plot_ngrams(ngram_list, n, top_n=10):
     ngrams = [' '.join(gram) for gram in ngrams]  # Join n-grams into readable strings
 
     # Plot the n-grams
-    plt.figure(figsize=(10, 6))
-    plt.barh(ngrams, counts, color='skyblue')
-    plt.xlabel('Frequency')
-    plt.ylabel(f'{n}-grams')
-    plt.title(f'Top {top_n} {n}-grams')
-    plt.gca().invert_yaxis()  # Highest frequency at the top
-    plt.show()
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.barh(ngrams, counts, color='skyblue')
+    ax.set_xlabel('Frequency')
+    ax.set_ylabel(f'{n}-grams')
+    ax.set_title(f'Top {top_n} {n}-grams')
+    ax.invert_yaxis()  # Highest frequency at the top
+    st.pyplot(fig)
 
 # Full analysis function: preprocess, extract, and plot n-grams
 def analyze_ngrams(text, n, top_n=10):
