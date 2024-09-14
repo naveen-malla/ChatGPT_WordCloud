@@ -34,3 +34,7 @@ config.ini
 
 # Ignore venv
 venv/
+
+# Ignore cache files
+.cache/
+__pycache__/
