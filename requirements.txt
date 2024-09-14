@@ -7,3 +7,4 @@ pillow
 nltk
 fsspec
 huggingface_hub
+streamlit
