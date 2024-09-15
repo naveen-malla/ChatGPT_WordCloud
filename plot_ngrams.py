@@ -7,11 +7,6 @@ import re
 import matplotlib.pyplot as plt
 import streamlit as st
 
-# Download necessary NLTK data
-# nltk.download('punkt')
-# nltk.download('stopwords')
-# nltk.download('wordnet')
-# nltk.download('omw-1.4')
 
 # Preprocess text: lowercasing, punctuation removal, stopword removal, lemmatization
 def preprocess_text(text):
